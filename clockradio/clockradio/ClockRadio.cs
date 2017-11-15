@@ -40,7 +40,7 @@ namespace clockradio
             string newAlarmTime = Console.ReadLine();
             alarmTime = newAlarmTime;
             alarm = true;
-            DisplayAlarm();
+            
 
         }
         public void DisplayAlarm()
@@ -51,6 +51,19 @@ namespace clockradio
             }else
             {
                 return;
+            }
+        }
+        public void SetRadio()
+        {
+            Console.WriteLine("Would you like to change your radio station? y or n?\n The station is currently set to:" + radioStation);
+            if (Console.ReadLine() == "y")
+            {
+                Console.WriteLine("What would you like to change the radio station to?");
+                radioStation = Console.ReadLine();
+                Console.WriteLine("Your radio has been set to: " + radioStation);
+            }else
+            {
+                SetRadio();
             }
         }
         

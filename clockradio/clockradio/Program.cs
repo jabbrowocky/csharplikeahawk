@@ -10,12 +10,13 @@ namespace clockradio
     {
         static void Main(string[] args)
         {
-            ClockRadio clockRadio = new ClockRadio("103.7",false);
+            ClockRadio clockRadio = new ClockRadio("102.1",false);
             
             clockRadio.DisplayTime();
             clockRadio.ChangeTime();
             clockRadio.SetAlarm();
             clockRadio.DisplayAlarm();
+            clockRadio.SetRadio();
             Console.ReadLine();
         }
     }
