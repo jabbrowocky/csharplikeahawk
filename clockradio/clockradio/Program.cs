@@ -17,6 +17,7 @@ namespace clockradio
             clockRadio.SetAlarm();
             clockRadio.DisplayAlarm();
             clockRadio.SetRadio();
+            clockRadio.DisplaySettings();
             Console.ReadLine();
         }
     }

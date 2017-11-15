@@ -9,8 +9,11 @@ namespace clockradio
     class ClockRadio
     {
         public string time;
+        public string timeSetting;
         public string radioStation;
+        public string radioSetting;
         public bool alarm;
+        public string alarmIsOn;
         public string alarmTime;
 
         public ClockRadio(string radioStation, bool alarm)
@@ -55,7 +58,7 @@ namespace clockradio
         }
         public void SetRadio()
         {
-            Console.WriteLine("Would you like to change your radio station? y or n?\n The station is currently set to:" + radioStation);
+            Console.WriteLine("Would you like to change your radio station? y or n?\n The station is currently set to: " + radioStation);
             if (Console.ReadLine() == "y")
             {
                 Console.WriteLine("What would you like to change the radio station to?");
@@ -64,6 +67,29 @@ namespace clockradio
             }else
             {
                 SetRadio();
+            }
+        }
+        public void DisplaySettings()
+        {
+            if(alarm == true)
+            {
+                alarmIsOn = "Alarm: On";
+            }else
+            {
+                alarmIsOn = "Alarm: Off";
+            }
+            timeSetting = "The time is: " + time;
+            radioSetting = "The radio is set to: " + radioStation;
+            Console.WriteLine("Thank you for setting up your clock, just to be sure, are these settings correct? y or n?" + " \n" + alarmIsOn + " \n" + timeSetting + " \n" + radioSetting);
+            if (Console.ReadLine() == "y")
+            {
+                Console.WriteLine("Thank you for configuring your clock radio!");
+            }else
+            {
+                ChangeTime();
+                SetRadio();
+                SetAlarm();
+                DisplaySettings();
             }
         }
         
