@@ -16,11 +16,11 @@ namespace clockradio
         public string alarmIsOn;
         public string alarmTime;
 
-        public ClockRadio(string radioStation, bool alarm)
+        public ClockRadio(string bealzabub, bool alarm)
         {
             Console.WriteLine("Please set the time:");
             time = Console.ReadLine();
-            this.radioStation = radioStation;
+            bealzabub = radioStation;
             this.alarm = alarm;
             
         }
