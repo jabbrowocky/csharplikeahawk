@@ -18,7 +18,7 @@ namespace clockradio
 
         public ClockRadio(string radioStation, bool alarm)
         {
-            Console.WriteLine("Enter time:");
+            Console.WriteLine("Please set the time:");
             time = Console.ReadLine();
             this.radioStation = radioStation;
             this.alarm = alarm;
@@ -27,10 +27,24 @@ namespace clockradio
 
         public void ChangeTime()
         {
-            Console.WriteLine("What is the new time?");
-            string newTime = Console.ReadLine();
-            time = newTime;
-            DisplayTime();
+            Console.WriteLine("Would you like to change the time? y or n?");            
+            string timeSetting = Console.ReadLine();
+            switch (timeSetting)
+            {
+                case "y":
+                    Console.WriteLine("Set the new time.");
+                    time = Console.ReadLine();
+                    Console.WriteLine(time);
+                    break;
+                case "n":
+                    Console.WriteLine("Time correctly set to " + time);
+                    break;
+                default:
+                    ChangeTime();
+                    break;               
+
+            }
+           
         }
 
         public void DisplayTime()
