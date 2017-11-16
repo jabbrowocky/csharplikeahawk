@@ -12,7 +12,6 @@ namespace clockradio
         {
             ClockRadio clockRadio = new ClockRadio("102.1",false);
             
-            clockRadio.DisplayTime();
             clockRadio.ChangeTime();
             clockRadio.SetAlarm();
             clockRadio.DisplayAlarm();

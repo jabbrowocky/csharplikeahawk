@@ -34,7 +34,7 @@ namespace clockradio
                 case "y":
                     Console.WriteLine("Set the new time.");
                     time = Console.ReadLine();
-                    Console.WriteLine(time);
+                    Console.WriteLine("Time has been updated to " + time);
                     break;
                 case "n":
                     Console.WriteLine("Time correctly set to " + time);
@@ -73,12 +73,20 @@ namespace clockradio
         public void SetRadio()
         {
             Console.WriteLine("Would you like to change your radio station? y or n?\n The station is currently set to: " + radioStation);
-            if (Console.ReadLine() == "y")
+            string radioConfig;
+            radioConfig = Console.ReadLine();
+            if (radioConfig == "y")
             {
                 Console.WriteLine("What would you like to change the radio station to?");
                 radioStation = Console.ReadLine();
                 Console.WriteLine("Your radio has been set to: " + radioStation);
-            }else
+            }
+            else if(radioConfig == "n")
+            {
+
+                Console.WriteLine("Radio remains on: " + radioStation);
+            }
+            else
             {
                 SetRadio();
             }
@@ -94,7 +102,7 @@ namespace clockradio
             }
             timeSetting = "The time is: " + time;
             radioSetting = "The radio is set to: " + radioStation;
-            Console.WriteLine("Thank you for setting up your clock, just to be sure, are these settings correct? y or n?" + " \n" + alarmIsOn + " \n" + timeSetting + " \n" + radioSetting);
+            Console.WriteLine("Thank you for setting up your clock radio! just to be sure, are these settings correct? y or n?" + " \n" + alarmIsOn + " \n" + timeSetting + " \n" + radioSetting);
             if (Console.ReadLine() == "y")
             {
                 Console.WriteLine("Thank you for configuring your clock radio!");
